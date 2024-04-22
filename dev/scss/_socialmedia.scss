@@ -1,0 +1,63 @@
+@use 'variables' as *;
+
+#social-media-section {
+  #top {
+    display: block;
+    margin: 30px 0 30px var(--side-margin);
+    text-decoration: none;
+    color: var(--theme-color-button);
+  }
+
+  span {
+    display: inline-flex;
+    padding: 20px 0;
+    align-items: middle;
+    line-height: 30px;
+  }
+  span i {
+    margin-right: 10px;
+    font-size: 30px;
+  }
+}
+
+#logo-container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px var(--side-margin);
+}
+
+#social-media-logos i {
+  margin-right: 5px;
+  color: white;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  line-height: 30px; //this must match height of before container in order to vertical centered it
+
+  &::before {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    border-radius: 50%;
+  }
+}
+
+@media (min-width: 500px) {
+  #social-media-logos i {
+    font-size: 20px;
+    line-height: 35px;
+
+    &::before {
+      width: 35px;
+      height: 35px;
+    }
+  }
+}
+
+@media (min-width: 550px) {
+  #logo-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

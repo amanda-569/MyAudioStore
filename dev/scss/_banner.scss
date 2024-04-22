@@ -1,0 +1,130 @@
+@use 'variables' as *;
+@use 'placeholders' as *;
+@use 'mixin' as *;
+
+#banner {
+  .banner-item {
+    position: relative;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  //left-buttons
+  .slick-prev {
+    @extend %slider-button-base;
+  }
+
+  //right-button
+  .slick-next {
+    @extend %slider-button-base;
+    right: 0;
+  }
+
+  //ul of buttons
+  .slick-dots {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: center;
+
+    //dot button in each li
+    button {
+      font-size: 0px;
+      height: 10px;
+      width: 10px;
+      padding: 0;
+      margin: 5px;
+      border: none;
+      border-radius: 50%;
+      background-color: var(--theme-color-button);
+      opacity: 0.2;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    //add color to the currently active slider dot
+    .slick-active button {
+      background-color: var(--theme-color-button);
+      opacity: 1;
+    }
+  }
+
+  .img-info-panel {
+    display: none;
+    button {
+      font-family: "Source Sans 3", sans-serif;
+      font-weight: 400;
+    }
+  }
+}
+
+@media (min-width: 500px) {
+  #banner .banner-item {
+    @include banner-with-panel(
+      $panel-width: 400px,
+      $p-text-color: var(--color-grey-banner-text),
+      $btn-text-color: white,
+      $p-header-size: 25px,
+      $p-body-size: 20px,
+      $btn-font-size: 14px
+    );
+  }
+}
+
+@media (min-width: 850px) {
+  #banner .banner-item {
+    @include banner-with-panel(
+      $panel-width: 400px,
+      $p-text-color: var(--color-grey-banner-text),
+      $btn-text-color: white,
+      $p-header-size: 32px,
+      $p-body-size: 20px,
+      $btn-font-size: 17px
+    );
+  }
+}
+
+@media (min-width: 1000px) {
+  #banner .banner-item {
+    @include banner-with-panel(
+      $panel-width: 520px,
+      $p-text-color: var(--color-grey-banner-text),
+      $btn-text-color: white,
+      $p-header-size: 55px,
+      $p-body-size: 40px,
+      $btn-font-size: 14px
+    );
+  }
+}
+
+@media (min-width: 1130px) {
+  #banner .banner-item {
+    @include banner-with-panel(
+      $panel-width: 640px,
+      $p-text-color: var(--color-grey-banner-text),
+      $btn-text-color: white,
+      $p-header-size: 55px,
+      $p-body-size: 50px,
+      $btn-font-size: 15px
+    );
+  }
+  #banner .banner-item .img-info-panel .body {
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 400;
+  }
+
+  #banner .banner-item .img-info-panel p.header {
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 900;
+    font-size: 4.5rem;
+    line-height: 4.5rem;
+  }
+}

@@ -1,0 +1,12 @@
+:root {
+  --theme-color-button: rgb(255, 131, 15);
+  --color-grey-banner-text: rgba(0, 0, 0, 0.6);
+  --color-body-background: rgb(62, 61, 61);
+  --font-size-section-header: 50px;
+  --font-size-mobile-paragraph: 14px; //for window < 450px
+  --font-size-tablet-paragraph: 18px; //for window > 600px
+  --font-size-desktop-paragraph: 22px; //for window > 760px
+  --narrow-page-padding: 20px; //mobile page padding
+  --button-height: 45px;
+  --side-margin: 8%; //used for social-media and footer section
+}

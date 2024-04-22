@@ -1,0 +1,130 @@
+@use "variables" as *;
+
+#video-section {
+  position: relative;
+
+  img {
+    width: 100%;
+  }
+
+  h1 {
+    position: absolute;
+    font-size: 25px;
+    font-weight: 1000;
+    top: 10%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    text-shadow: 0.05rem 0.05rem white;
+  }
+
+  #play-video-icon {
+    position: absolute;
+    font-size: 50px;
+    color: var(--theme-color-button);
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &:hover {
+      text-shadow: 0.05rem 0.05rem white;
+    }
+  }
+}
+
+#video-modal {
+  padding: 0 !important;
+
+  .modal-dialog {
+  }
+
+  .modal-content {
+    position: relative;
+    width: 80vw;
+    border-radius: 0;
+    padding: 10px;
+    margin: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .modal-body {
+    width: 100%;
+    padding: 0;
+  }
+
+  video {
+    width: 100%;
+    &:focus-within {
+      border: solid #6cb4ee 3px;
+    }
+  }
+
+  button {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background-color: black;
+    color: white;
+    border: none;
+
+    &:hover {
+      background-color: var(--theme-color-button);
+    }
+  }
+}
+
+@media (min-width: 425px) {
+  #video-section {
+    h1 {
+      font-size: 30px;
+    }
+    #play-video-icon {
+      font-size: 70px;
+    }
+  }
+}
+
+@media (min-width: 500px) {
+  #video-section {
+    h1 {
+      font-size: 32px;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  #video-section {
+    h1 {
+      font-size: 40px;
+    }
+    #play-video-icon {
+      font-size: 90px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  #video-section {
+    h1 {
+      font-size: 52px;
+    }
+    #play-video-icon {
+      font-size: 110px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  #video-section {
+    #play-video-icon {
+      font-size: 220px;
+    }
+  }
+}

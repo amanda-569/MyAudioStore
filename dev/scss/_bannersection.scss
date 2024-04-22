@@ -1,0 +1,416 @@
+@use "variables" as *;
+@use "placeholders" as *;
+@use "mixin" as *;
+
+// anything else smaller than 300px
+#banner-midsection {
+  .banner-item {
+    position: relative;
+  }
+  img {
+    width: 100%;
+  }
+}
+
+#banner-midsection .banner-item {
+  @include banner-with-panel-dark-theme(
+    $panel-width: 500px,
+    $p-text-color: white,
+    $btn-text-color: var(--color-grey-banner-text),
+    $p-header-size: 24px,
+    $p-body-size: 15px,
+    $btn-font-size: 16px
+  );
+  .img-info-panel {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    p[class="header"] {
+      width: 100%;
+    }
+  }
+}
+
+#banner-midsection #banner-our-story {
+  @include banner-our-story(
+    $panel-width: 500px,
+    $p-text-color: white,
+    $btn-text-color: white,
+    $p-header-size: 2em,
+    $p-body-size: 0.8em,
+    $btn-font-size: 16px
+  );
+  .img-info-panel {
+    //overide padding
+    padding: 1em 1em 1em 1em;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30, 30, 30, 0.75);
+
+    //override p header padding
+    p[class="header"] {
+      padding-bottom: 10px;
+      width: 100%;
+    }
+    //override p body width
+    p[class="body"] {
+      width: 80%;
+    }
+    //override button margin
+    button {
+      margin-top: 15px;
+    }
+  }
+}
+
+//viewport larger than 300px - just our story
+@media (min-width: 300px) {
+  #banner-midsection #banner-our-story {
+    @include banner-our-story(
+      $panel-width: 500px,
+      $p-text-color: white,
+      $btn-text-color: white,
+      $p-header-size: 2em,
+      $p-body-size: 0.9em,
+      $btn-font-size: 16px
+    );
+    .img-info-panel {
+      //ovveride padding
+      padding: 10px 10px 10px 10px;
+      background-color: rgba(30, 30, 30, 0.75);
+
+      //override p header padding
+      p[class="header"] {
+        padding-bottom: 10px;
+      }
+      //override p body width
+      p[class="body"] {
+        width: 80%;
+        line-height: 1.5em;
+      }
+      //remove button margin
+      button {
+        margin-top: 1.3em;
+      }
+    }
+  }
+}
+
+//viewport larger than 300px - just our story
+@media (min-width: 400px) {
+  #banner-midsection #banner-our-story {
+    @include banner-our-story(
+      $panel-width: 500px,
+      $p-text-color: white,
+      $btn-text-color: white,
+      $p-header-size: 2.2em,
+      $p-body-size: 1.2em,
+      $btn-font-size: 16px
+    );
+    .img-info-panel {
+      //ovveride padding
+      padding: 10px 10px 10px 10px;
+      background-color: rgba(30, 30, 30, 0.75);
+
+      //override p header padding
+      p[class="header"] {
+        padding-bottom: 10px;
+      }
+      //override p body width
+      p[class="body"] {
+        width: 80%;
+        line-height: 1.5em;
+      }
+      //remove button margin
+      button {
+        margin-top: 1.3em;
+      }
+    }
+  }
+}
+
+//viewport larger than 500px
+@media (min-width: 500px) {
+  #banner-midsection .banner-item {
+    @include banner-with-panel-dark-theme(
+      $panel-width: 280px,
+      $p-text-color: white,
+      $btn-text-color: var(--color-grey-banner-text),
+      $p-header-size: 24px,
+      $p-body-size: 16px,
+      $btn-font-size: 16px
+    );
+    .img-info-panel {
+      padding: 30px 50px 30px 30px;
+      top: 2.5em;
+      height: 180px;
+      left: auto;
+      right: 0;
+      //override p header padding
+      p[class="header"] {
+        width: 100%;
+        margin-bottom: 3px;
+      }
+      //override button margin
+      button {
+        margin-top: 15px;
+      }
+    }
+  }
+
+  #banner-midsection #banner-our-story {
+    @include banner-our-story(
+      $panel-width: 500px,
+      $p-text-color: white,
+      $btn-text-color: white,
+      $p-header-size: 2.4em,
+      $p-body-size: 1.2em,
+      $btn-font-size: 18px
+    );
+    .img-info-panel {
+      //ovveride padding
+      padding: 10px 10px 10px 10px;
+      background-color: rgba(30, 30, 30, 0.75);
+
+      //override p header padding
+      p[class="header"] {
+        padding-bottom: 10px;
+      }
+      //override p body width
+      p[class="body"] {
+        width: 90%;
+      }
+      //remove button margin
+      button {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+//viewport larger than 650px
+@media (min-width: 650px) {
+  #banner-midsection .banner-item {
+    @include banner-with-panel-dark-theme(
+      $panel-width: 300px,
+      $p-text-color: white,
+      $btn-text-color: var(--color-grey-banner-text),
+      $p-header-size: 26px,
+      $p-body-size: 16px,
+      $btn-font-size: 16px
+    );
+    .img-info-panel {
+      padding: 30px 50px 30px 30px;
+      top: 3em;
+      height: 180px;
+      left: auto;
+      right: 0;
+      //override button margin
+      button {
+        margin-top: 15px;
+      }
+    }
+  }
+
+  #banner-midsection #banner-our-story {
+    @include banner-our-story(
+      $panel-width: 500px,
+      $p-text-color: white,
+      $btn-text-color: white,
+      $p-header-size: 42px,
+      $p-body-size: 16px,
+      $btn-font-size: 18px
+    );
+    .img-info-panel {
+      //ovveride padding
+      padding: 10px 10px 10px 10px;
+      background-color: rgba(30, 30, 30, 0.75);
+
+      //override p header padding
+      p[class="header"] {
+        padding-bottom: 10px;
+      }
+      //override p body width
+      p[class="body"] {
+        width: 85%;
+      }
+      //overide button margin
+      button {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+//viewport larger than 750px - our story only
+@media (min-width: 750px) {
+  #banner-midsection #banner-our-story {
+    @include banner-our-story(
+      $panel-width: 500px,
+      $p-text-color: white,
+      $btn-text-color: white,
+      $p-header-size: 42px,
+      $p-body-size: 26px,
+      $btn-font-size: 15px
+    );
+    .img-info-panel {
+      //ovveride padding
+      padding: 10px 10px 10px 10px;
+
+      //override p header padding
+      p[class="header"] {
+        padding-bottom: 10px;
+      }
+      //override p body width
+      p[class="body"] {
+        width: 60%;
+      }
+      //overide button margin
+      button {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+//viewport larger than 850px
+@media (min-width: 850px) {
+  #banner-midsection .banner-item {
+    @include banner-with-panel-dark-theme(
+      $panel-width: 445px,
+      $p-text-color: white,
+      $btn-text-color: var(--color-grey-banner-text),
+      $p-header-size: 42px,
+      $p-body-size: 28px,
+      $btn-font-size: 15px
+    );
+    .img-info-panel {
+      // Override styles for .img-info-panel
+      top: 80px;
+      left: auto;
+      right: 0;
+      height: 220px;
+      //overide button margin
+      button {
+        margin-top: 10px;
+      }
+    }
+    #banner-midsection #banner-our-story {
+      @include banner-our-story(
+        $panel-width: 520px,
+        $p-text-color: white,
+        $btn-text-color: white,
+        $p-header-size: 54px,
+        $p-body-size: 34px,
+        $btn-font-size: 15px
+      );
+    }
+  }
+
+  //viewport larger than 1000px
+  @media (min-width: 1000px) {
+    #banner-midsection .banner-item {
+      @include banner-with-panel-dark-theme(
+        $panel-width: 445px,
+        $p-text-color: white,
+        $btn-text-color: var(--color-grey-banner-text),
+        $p-header-size: 44px,
+        $p-body-size: 28px,
+        $btn-font-size: 15px
+      );
+      .img-info-panel {
+        // Override styles for .img-info-panel
+        top: 80px;
+        left: auto;
+        right: 0;
+        height: 230px;
+        p[class="header"] {
+          width: 100%;
+        }
+      }
+    }
+    #banner-midsection #banner-our-story {
+      @include banner-our-story(
+        $panel-width: 520px,
+        $p-text-color: white,
+        $btn-text-color: white,
+        $p-header-size: 50x,
+        $p-body-size: 28px,
+        $btn-font-size: 18px
+      );
+      //override p body width
+      .img-info-panel {
+        //ovveride padding
+        padding: 10px 10px 10px 10px;
+
+        //override p header padding
+        p[class="header"] {
+          padding-bottom: 10px;
+          width: 100%;
+        }
+        //override p body width
+        p[class="body"] {
+          width: 60%;
+        }
+        //overide button margin
+        button {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+  // viewport larger than 1130px
+  @media (min-width: 1130px) {
+    #banner-midsection .banner-item {
+      @include banner-with-panel-dark-theme(
+        $panel-width: 500px,
+        $p-text-color: white,
+        $btn-text-color: var(--color-grey-banner-text),
+        $p-header-size: 48px,
+        $p-body-size: 32px,
+        $btn-font-size: 15px
+      );
+      .img-info-panel {
+        // Override styles for .img-info-panel
+        top: 140px;
+        left: auto;
+        right: 0;
+        height: 280px;
+        padding: 55px 50px 60px 40px;
+        p[class="header"] {
+          width: 100%;
+        }
+      }
+    }
+    #banner-midsection #banner-our-story {
+      @include banner-our-story(
+        $panel-width: 520px,
+        $p-text-color: white,
+        $btn-text-color: white,
+        $p-header-size: 50x,
+        $p-body-size: 28px,
+        $btn-font-size: 18px
+      );
+      //override p body width
+      .img-info-panel {
+        //ovveride padding
+        padding: 10px 10px 10px 10px;
+
+        //override p header padding
+        p[class="header"] {
+          padding-bottom: 10px;
+          width: 100%;
+        }
+        //override p body width
+        p[class="body"] {
+          width: 53%;
+        }
+        //overide button margin
+        button {
+          margin-top: 40px;
+        }
+      }
+    }
+  }
+}

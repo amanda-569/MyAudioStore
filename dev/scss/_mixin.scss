@@ -1,0 +1,168 @@
+@use 'variables' as *;
+
+@mixin rect-button(
+  $bg-color: var(--theme-color-button),
+  $color: white,
+  $font-size: 18px
+) {
+  height: var(--button-height);
+  background-color: $bg-color;
+  color: $color;
+  border: none;
+  padding: 0 20px;
+  border-radius: 0.3rem;
+  font-size: $font-size;
+}
+
+//assume the parent container has position relative
+@mixin banner-with-panel(
+  $panel-width: 500px,
+  $p-text-color: white,
+  $btn-text-color: var(--color-grey-banner-text),
+  $btn-color: var(--theme-color-button),
+  $btn-font-size: 18px,
+  $p-header-size: 55px,
+  $p-body-size: 50px
+) {
+  img {
+    width: 100%;
+  }
+
+  .img-info-panel {
+    display: block;
+    position: absolute;
+    box-sizing: border-box;
+    z-index: 1;
+    right: 0;
+    top: 30px;
+    width: $panel-width;
+    padding: 30px 60px 30px 30px;
+    background-color: rgba(255, 255, 255, 0.7);
+
+    p {
+      color: $p-text-color;
+      margin: 0;
+    }
+    p[class='header'] {
+      font-size: $p-header-size;
+      font-weight: 800;
+    }
+    p[class='body'] {
+      font-size: $p-body-size;
+    }
+
+    button {
+      @include rect-button(
+        $bg-color: $btn-color,
+        $color: $btn-text-color,
+        $font-size: $btn-font-size
+      );
+      margin-top: 30px;
+    }
+  }
+}
+
+//middle banner section with dark theme
+@mixin banner-with-panel-dark-theme(
+  $panel-width: 445px,
+  $p-text-color: white,
+  $btn-text-color: white,
+  $btn-color: white,
+  $btn-font-size: 18px,
+  $p-header-size: 55px,
+  $p-body-size: 50px
+) {
+  img {
+    width: 100%;
+  }
+
+  .img-info-panel {
+    display: block;
+    position: absolute;
+    box-sizing: border-box;
+    z-index: 1;
+    right: 0;
+    top: 160px;
+    width: $panel-width;
+    padding: 30px 60px 30px 30px;
+    background-color: rgba(30, 30, 30, 0.6);
+
+    p {
+      color: white;
+      margin: 0;
+    }
+    p[class='header'] {
+      font-size: $p-header-size;
+      font-weight: 400;
+    }
+    p[class='body'] {
+      font-size: $p-body-size;
+    }
+
+    button {
+      @include rect-button(
+        $bg-color: $btn-color,
+        $color: $btn-text-color,
+        $font-size: $btn-font-size
+      );
+      margin-top: 30px;
+      font-weight: 500;
+    }
+  }
+}
+
+// our story
+
+//middle banner section with dark theme
+@mixin banner-our-story(
+  $panel-width: 100%,
+  $p-text-color: white,
+  $btn-text-color: white,
+  $btn-color: var(--theme-color-button),
+  $btn-font-size: 18px,
+  $p-header-size: 55px,
+  $p-body-size: 50px
+) {
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .img-info-panel {
+    position: absolute;
+    text-align: center;
+    box-sizing: border-box;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 30px 60px 30px 30px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p {
+      color: white;
+      margin: 0;
+    }
+    p[class='header'] {
+      font-size: $p-header-size;
+      font-weight: 400;
+    }
+    p[class='body'] {
+      font-size: $p-body-size;
+      width: 55%;
+    }
+
+    button {
+      @include rect-button(
+        $bg-color: $btn-color,
+        $color: $btn-text-color,
+        $font-size: $btn-font-size
+      );
+      margin-top: 30px;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@use 'variables' as *;
+
+#footer {
+  width: 100%;
+  background-color: rgb(222, 221, 221);
+  padding: var(--side-margin);
+  border-top: solid black 1px;
+}
+
+#footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  div {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      text-decoration: none;
+      margin: 4px 0;
+      color: black;
+    }
+  }
+}
+
+@media (min-width: 350px) {
+  #footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 500px) {
+  #footer-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

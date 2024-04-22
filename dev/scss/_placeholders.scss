@@ -1,0 +1,21 @@
+@use 'variables' as *;
+
+%slider-button-base {
+  position: absolute;
+  width: 50px;
+  //height, top, bottom, and margin togther vertically aligns the element
+  height: 50px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  padding: 0;
+  z-index: 2;
+  color: var(--theme-color-button);
+  font-size: 30px;
+  background: none;
+  border: none;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}

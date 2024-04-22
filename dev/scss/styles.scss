@@ -1,0 +1,22 @@
+@use 'variables' as *;
+@use 'banner' as *;
+@use 'bestseller' as *;
+@use 'inthenews' as *;
+@use 'shopby' as *;
+@use 'nav' as *;
+@use 'bannersection' as *;
+@use 'videosection' as *;
+@use 'socialmedia' as *;
+@use 'footer' as *;
+
+main {
+  max-width: 1440px;
+  margin: auto;
+  background-color: white;
+}
+
+@media (min-width: 1440px) {
+  body {
+    background-color: var(--color-body-background);
+  }
+}
